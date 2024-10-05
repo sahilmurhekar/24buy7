@@ -16,7 +16,7 @@ mongoose.set("strictQuery", true);
 const MONGO_URI = process.env.MONGO_URI; // Use environment variable for MongoDB URI
 
 mongoose
-  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log("MongoDB connection error:", err));
 
@@ -39,24 +39,16 @@ app.get("/", (req, res) => {
 
 // POST route to save data
 app.post("/adddata", async (req, res) => {
-  const myData = new User(req.body);
-  myData
-    .save()
-    .then(item => {
-      res.send("Name saved to database");
-      console.log("saved");
-    })
-    .catch(err => {
-      res.status(400).send("Unable to save to database");
-      console.error("Error saving data:", err);
-    });
-});
-
-// Start server listening on port 5000
-const port = 5000; // Define your port here
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  try {
+    const myData = new User(req.body);
+    await myData.save(); // Wait for save operation to complete
+    res.status(200).send("Name saved to database");
+    console.log("Data saved:", myData);
+  } catch (err) {
+    res.status(500).send("Unable to save to database");
+    console.error("Error saving data:", err);
+  }
 });
 
 // Export the app as a serverless function handler
-module.exports.handler = serverless(app);
+module.exports = serverless(app);
