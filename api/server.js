@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.set("strictQuery", true);
 const MONGO_URI = process.env.MONGO_URI; // Use environment variable for MongoDB URI
 
+// Connect to MongoDB
 mongoose
   .connect(MONGO_URI)
   .then(() => console.log("MongoDB connected"))
