@@ -9,37 +9,37 @@ const MyNavbar = () => {
       </div>
       <div id='images'>
         <div id='part1'>
-        <div><img height={'130vh'} src='cocacola.png' id='cocacola'/></div>
-        <div><img height={'130vh'} src='balaji.png' id='balaji'/></div>
-        <div><img  height={'130vh'} src='itc.png' id='itc'/></div>
+        <div><img height={'130vh'} src='cocacola.png' id='cocacola'alt='hi'/></div>
+        <div><img height={'130vh'} src='balaji.png' id='balaji'alt='hi'/></div>
+        <div><img  height={'130vh'} src='itc.png' id='itc'alt='hi'/></div>
         </div>
         <div id='part1'>
-        <div><img height={'130vh'} src='haldiram.png' id='haldiram'/></div>
-        <div><img height={'130vh'} src='nestle.png' id='nestle'/></div>
-        <div><img height={'130vh'} src='amul.png' id='amul'/></div>
-        <div><img height={'130vh'} src='chedda.png' id='chedda'/></div>
+        <div><img height={'130vh'} src='haldiram.png' id='haldiram'alt='hi'/></div>
+        <div><img height={'130vh'} src='nestle.png' id='nestle'alt='hi'/></div>
+        <div><img height={'130vh'} src='amul.png' id='amul'alt='hi'/></div>
+        <div><img height={'130vh'} src='chedda.png' id='chedda'alt='hi'/></div>
         </div>
         <div id='part1'>
-        <div><img height={'130vh'} src='cavins.png' id='cavin'/></div>
-        <div><img height={'130vh'} src='monginis.png' id='monginis'/></div>
-        <div><img height={'130vh'} src='wafflemill.png' id='wafflemill'/></div>
-        <div><img height={'130vh'} src='snackible.png' id='snackible'/></div>
-        <div><img height={'130vh'} src='paperboat.png' id='paperboat'/></div>
+        <div><img height={'130vh'} src='cavins.png' id='cavin'alt='hi'/></div>
+        <div><img height={'130vh'} src='monginis.png' id='monginis'alt='hi'/></div>
+        <div><img height={'130vh'} src='wafflemill.png' id='wafflemill'alt='hi'/></div>
+        <div><img height={'130vh'} src='snackible.png' id='snackible'alt='hi'/></div>
+        <div><img height={'130vh'} src='paperboat.png' id='paperboat'alt='hi'/></div>
         </div>
        </div>
        <div id='image'>
-        <div><img height={'130vh'} src='cocacola.png' id='cocacola'/></div>
-        <div><img height={'130vh'} src='balaji.png' id='balaji'/></div>
-        <div><img height={'130vh'} src='itc.png' id='itc'/></div>
-        <div><img height={'130vh'} src='haldiram.png' id='haldiram'/></div>
-        <div><img height={'130vh'} src='nestle.png' id='nestle'/></div>
-        <div><img height={'130vh'} src='amul.png' id='amul'/></div>
-        <div><img height={'130vh'} src='chedda.png' id='chedda'/></div>
-        <div><img height={'130vh'} src='cavins.png' id='cavin'/></div>
-        <div><img height={'130vh'} src='monginis.png' id='monginis'/></div>
-        <div><img height={'130vh'} src='wafflemill.png' id='wafflemill'/></div>
-        <div><img height={'130vh'} src='snackible.png' id='snackible'/></div>
-        <div><img height={'130vh'} src='paperboat.png' id='paperboat'/></div>
+        <div><img height={'130vh'} src='cocacola.png' id='cocacola'alt='hi'/></div>
+        <div><img height={'130vh'} src='balaji.png' id='balaji'alt='hi'/></div>
+        <div><img height={'130vh'} src='itc.png' id='itc'alt='hi'/></div>
+        <div><img height={'130vh'} src='haldiram.png' id='haldiram'alt='hi'/></div>
+        <div><img height={'130vh'} src='nestle.png' id='nestle'alt='hi'/></div>
+        <div><img height={'130vh'} src='amul.png' id='amul'alt='hi'/></div>
+        <div><img height={'130vh'} src='chedda.png' id='chedda'alt='hi'/></div>
+        <div><img height={'130vh'} src='cavins.png' id='cavin'alt='hi'/></div>
+        <div><img height={'130vh'} src='monginis.png' id='monginis'alt='hi'/></div>
+        <div><img height={'130vh'} src='wafflemill.png' id='wafflemill'alt='hi'/></div>
+        <div><img height={'130vh'} src='snackible.png' id='snackible'alt='hi'/></div>
+        <div><img height={'130vh'} src='paperboat.png' id='paperboat'alt='hi'/></div>
         </div>
        <div className='brandbybutton'>
        <a href='#contactpage'><button  id='post'>Apply for Colab→</button></a>

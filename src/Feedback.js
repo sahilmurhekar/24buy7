@@ -1,4 +1,3 @@
-import react from 'react';
 import "./Note.css";
 import Note from "./Note.js";
 import notecontent from "./notecontent.js";
