@@ -1,12 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const cors = require('cors');
 const mongoose = require("mongoose");
 const serverless = require("serverless-http");
 require("dotenv").config(); // Load environment variables from .env file
 
 // Create an Express app
 const app = express();
+app.use(cors({
+    origin: 'https://24buy7.vercel.app',
+    credentials: true
+}));
 app.use(express.static(path.join(__dirname, '..', 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -49,6 +54,10 @@ app.post("/adddata", async (req, res) => {
     res.status(500).send("Unable to save to database");
     console.error("Error saving data:", err);
   }
+});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
 // Export the app as a serverless function handler
