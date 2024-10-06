@@ -4,7 +4,7 @@ function Contact() {
   return (
     <div className="contact" id='contactpage'>
       <div  className='ourServicePage'><h1>CONTACT US!</h1></div>
-      <form action="/api/adddata" method="POST">
+      <form action="https://24buy7api.vercel.app/adddata" method="POST">
         <div className='firstfield'>
             <input className='Fname' type='text' placeholder='First Name' name='Fname' required/>
             <input className='Lname' type='text' placeholder='Last Name' name='Lname' required/>
