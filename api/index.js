@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const cors = require('cors');
+const cors = require("cors");
 const mongoose = require("mongoose");
 const serverless = require("serverless-http");
 require("dotenv").config(); // Load environment variables from .env file
@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, '..', 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Mongoose configuration (move connection outside handler)
+// Mongoose configuration
 mongoose.set("strictQuery", true);
 const MONGO_URI = process.env.MONGO_URI; // Use environment variable for MongoDB URI
 
@@ -43,7 +43,7 @@ const nameschema = new mongoose.Schema({
 const User = mongoose.model("vending", nameschema);
 
 // POST route to save data
-app.post("/adddata", async (req, res) => {
+app.post("/api/adddata", async (req, res) => { // Use /api prefix for serverless
   try {
     await connectToDatabase(); // Ensure connection is established
     const myData = new User(req.body);
@@ -55,10 +55,7 @@ app.post("/adddata", async (req, res) => {
     console.error("Error saving data:", err);
   }
 });
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 
 // Export the app as a serverless function handler
-module.exports = serverless(app);
+module.exports.handler = serverless(app);
+
