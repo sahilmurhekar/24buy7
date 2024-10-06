@@ -9,7 +9,7 @@ require("dotenv").config(); // Load environment variables from .env file
 // Create an Express app
 const app = express();
 app.use(cors({
-    origin: 'https://24buy7.vercel.app',
+    origin: 'https://24buy7-dun.vercel.app',
     credentials: true
 }));
 app.use(express.static(path.join(__dirname, '..', 'build')));
