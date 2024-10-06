@@ -11,15 +11,19 @@ app.use(express.static(path.join(__dirname, '..', 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Mongoose configuration
+// Mongoose configuration (move connection outside handler)
 mongoose.set("strictQuery", true);
 const MONGO_URI = process.env.MONGO_URI; // Use environment variable for MongoDB URI
 
-// Connect to MongoDB
-mongoose
-  .connect(MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log("MongoDB connection error:", err));
+let isConnected = false;
+
+const connectToDatabase = async () => {
+  if (!isConnected) {
+    await mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    isConnected = true;
+    console.log("MongoDB connected");
+  }
+};
 
 // Schema and model setup
 const nameschema = new mongoose.Schema({
@@ -33,14 +37,10 @@ const nameschema = new mongoose.Schema({
 
 const User = mongoose.model("vending", nameschema);
 
-// Serve frontend
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
-});
-
 // POST route to save data
 app.post("/adddata", async (req, res) => {
   try {
+    await connectToDatabase(); // Ensure connection is established
     const myData = new User(req.body);
     await myData.save(); // Wait for save operation to complete
     res.status(200).send("Name saved to database");
